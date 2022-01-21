@@ -1,0 +1,76 @@
+.app-beerlist {
+  width: 15vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  height: 35vh;
+  border-radius: 50px;
+
+}
+
+img {
+  height: 10vh;
+  margin-right: 1vw;
+}
+
+.app-beerlist__singleBeerName {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+.app-beerlist__singleBeerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1.5vh;
+  vertical-align: center;
+}
+
+@media screen and (max-width: 1200px) and (min-width:576px) {
+  .app-beerlist {
+    width: 80vw;
+  }
+
+  img {
+    height: 5vh;
+    margin-right: 1vw;
+  }
+
+  .app-beerlist--ul {
+    display: flex;
+    flex-wrap: row wrap;
+    width: 60vw;
+    justify-content: space-between;
+  }
+
+  .app-beerlist__singleBeerWrapper {
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  .app-beerlist {
+    width: 80vw;
+  }
+
+  img {
+    height: 5vh;
+    margin-right: 1vw;
+  }
+
+  .app-beerlist--ul {
+    width: 60vw;
+  }
+
+  .app-beerlist__singleBeerWrapper {
+    margin-top: 5vh;
+  }
+
+}

@@ -1,0 +1,115 @@
+.app-form {
+  padding: 5vh 2vw 5vh 2vw;
+  background-color: rgb(246, 247, 189);
+}
+
+label {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  margin-right: 3vw;
+}
+
+.app-form__validatorAlert {
+  text-align: center;
+  width: 45vw;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8rem;
+  background-color: rgba(255, 0, 0, 0.4);
+  border-left: solid 5px #BF4D28;
+  padding: 2vh 3vw 2vh 3vw;
+  margin-top: 4vh;
+}
+
+.app-form__validatorAlert--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4vh;
+}
+
+input {
+  text-align: center;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.app-form__inputWrapper--fixedText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.app-form__btn--guardar {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  margin-right: 2vw;
+  color: black;
+  text-shadow: whitesmoke 0.1em 0.1em 0.2em;
+  background-color: orange;
+  border-radius: 80px;
+  padding: 2vh 1vw 2vh 1vw;
+  border: #80BCA3 solid 0.5px;
+}
+
+.app-form__btn--guardar:hover {
+  background-color: #80BCA3;
+  color: rgb(246, 247, 189);
+  box-shadow: 2px 2px 3px 0.7px rgba(101, 86, 67, 0.8);
+}
+
+.app-form__btn--borrar {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  margin-right: 2vw;
+  color: black;
+  text-shadow: whitesmoke 0.1em 0.1em 0.2em;
+  background-color: orange;
+  border-radius: 80px;
+  padding: 2vh 1.5vw 2vh 1.5vw;
+  border: #BF4D28 solid 0.5px;
+  margin-bottom: 5vh;
+}
+
+.app-form__btn--borrar:hover {
+  background-color: #BF4D28;
+  color: rgb(246, 247, 189);
+  box-shadow: 2px 2px 3px 0.7px rgba(101, 86, 67, 0.8);
+}
+
+.app-form__btnWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 5vh;
+  margin-left: 3vw;
+}
+
+@media screen and (max-width: 576px) {
+  .app-form__validatorAlert {
+    width: 65vw;
+    padding: 2vh 3vw 2vh 3vw;
+    margin-top: 4vh;
+    font-size: 0.6rem;
+  }
+  .app-form__btn--borrar {
+    padding: 2vh 3.5vw 2vh 3.5vw;
+  }
+
+  .app-form__btn--guardar {
+    padding: 2vh 2.5vw 2vh 2.5vw;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width:576px) {
+
+  .app-form__btn--borrar {
+    padding: 2vh 3vw 2vh 3vw;
+  }
+
+  .app-form__btn--guardar {
+    padding: 2vh 2.5vw 2vh 2.5vw;
+  }
+}

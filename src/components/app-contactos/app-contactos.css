@@ -1,0 +1,144 @@
+.app-contactos {
+  background-color: rgb(246, 247, 189);
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10vh;
+}
+
+
+.app-contactos__contactoCard {
+  background: linear-gradient(to bottom, #80BCA3, #a8f7d6, #80BCA3);
+  width: 20vw;
+  margin: 3vh 2vw 3vh 2vw;
+  border: solid 1px black;
+  display: flex;
+  text-shadow: rgb(150, 252, 252) 0.1em 0.1em 0.4em;
+}
+
+.app-contactos__contactoCard:hover {
+  background: linear-gradient(to bottom, rgb(255, 81, 0), orange);
+  color: rgb(246, 247, 189);
+  box-shadow: 2px 2px 16px 0.7px rgba(101, 86, 67, 0.8);
+  text-shadow: black 0.1em 0.1em 0.4em;
+}
+
+li {
+  list-style: none;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.app-card__infoContacto {
+  vertical-align: center;
+}
+
+.app-card__txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 15vw;
+}
+
+.app-card__cardTxt--items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.app-card__cardTxt--itemsLabel {
+  font-family: 'Oswald', sans-serif;
+
+}
+
+.app-card__favBeers--Label {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.app-card__app-beerlistWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1200px) and (min-width:576px) {
+  .app-contactos {
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    height: 1vh;
+    font-size: 0.8rem;
+  }
+
+  .app-card__favBeers--Label {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  .app-contactos__contactoCard {
+    width: 80vw;
+    height: 40vh;
+    margin-left: 10vw;
+  }
+
+  .app-card__txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60vw;
+  }
+
+  .app-card__cardTxt--items {
+    justify-content: space-between;
+  }
+
+}
+
+
+@media screen and (max-width: 576px) {
+  .app-contactos {
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    height: 1vh;
+    font-size: 0.8rem;
+  }
+
+  .app-card__favBeers--Label {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  .app-contactos__contactoCard {
+    width: 80vw;
+    height: 80vh;
+    margin-left: 10vw;
+  }
+
+  .app-card__txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60vw;
+  }
+
+  .app-card__cardTxt--items {
+    justify-content: space-between;
+  }
+}
