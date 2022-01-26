@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Cerveza } from "./components/app-form/app-form";
+import { Modal } from "./components/app-beerlist/app-beerlist";
+import { JSON } from "./components/app-shortlist/app-shortlist";
+import { Modal as Modal1 } from "./components/app-beerlist/app-beerlist";
 import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AppBeercards {
@@ -13,11 +16,16 @@ export namespace Components {
         "listaBeer": Cerveza[];
     }
     interface AppBeerinfo {
-        "open": boolean;
-        "transparent": boolean;
+        "modal": Modal;
+        "modalWatcher": Modal;
+        "shower": boolean;
     }
     interface AppBeerlist {
         "beerlist": Cerveza[];
+        "contact": JSON;
+        "modalBeerList": Modal[];
+        "modalCounter": number;
+        "modalTarget": Modal;
     }
     interface AppContactos {
     }
@@ -25,6 +33,7 @@ export namespace Components {
     }
     interface AppForm {
         "changeFormValue": (controlName: any, value: any) => Promise<void>;
+        "checksCounter": Number;
     }
     interface AppHeader {
     }
@@ -126,17 +135,26 @@ declare namespace LocalJSX {
         "onChecker"?: (event: CustomEvent<number>) => void;
     }
     interface AppBeerinfo {
-        "open"?: boolean;
-        "transparent"?: boolean;
+        "modal"?: Modal;
+        "modalWatcher"?: Modal;
+        "onCloseModal"?: (event: CustomEvent<Modal>) => void;
+        "shower"?: boolean;
     }
     interface AppBeerlist {
         "beerlist"?: Cerveza[];
+        "contact"?: JSON;
+        "modalBeerList"?: Modal[];
+        "modalCounter"?: number;
+        "modalTarget"?: Modal;
+        "onOpenModal"?: (event: CustomEvent<Modal>) => void;
     }
     interface AppContactos {
+        "onOpenModal"?: (event: CustomEvent<boolean>) => void;
     }
     interface AppFooter {
     }
     interface AppForm {
+        "checksCounter"?: Number;
     }
     interface AppHeader {
     }

@@ -1,5 +1,8 @@
-import { Component, h } from '@stencil/core';
-import { JSON } from '../app-shortlist/app-shortlist'
+import { Component, h, Event, EventEmitter } from '@stencil/core';
+import { Cerveza } from '../app-form/app-form';
+import { JSON } from '../app-shortlist/app-shortlist';
+
+export interface Modal extends Cerveza { modalState: boolean; }
 
 @Component({
   tag: 'app-contactos',
@@ -20,6 +23,11 @@ export class AppContactos {
     }
   }
 
+  @Event({ bubbles: true, composed: true }) openModal: EventEmitter<boolean>;
+  onOpenModal(e: Event): void {
+    this.openModal.emit(true);
+    console.log('haz clickado en un boton modal', e);
+  }
 
   render() {
     return (
@@ -38,9 +46,7 @@ export class AppContactos {
               </div>
               <li>
                 <p class="app-card__cardTxt--itemsLabel app-card__favBeers--Label">Cervezas favoritas:</p>
-                <div class="app-card__app-beerlistWrapper">
-                  <app-beerlist beerlist={i.listaBeers}></app-beerlist>
-                </div>
+                <app-beerlist contact={i} ></app-beerlist>
               </li>
             </ul>
           </div>

@@ -1,6 +1,7 @@
 :host {
   display: block;
 }
+
 footer {
   background-color: orange;
   display: flex;
@@ -9,14 +10,15 @@ footer {
   height: 40vh;
   width: 100%;
 }
+
 p {
   text-align: center;
   text-shadow: white 0.1em 0.1em 0.2em;
-  font-family: 'Raleway', sans-serif ;
+  font-family: 'Raleway', sans-serif;
 }
 
 @media screen and (max-width: 576px) {
-  p{
+  p {
     font-size: 0.8rem;
   }
 }

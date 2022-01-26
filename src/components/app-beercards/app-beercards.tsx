@@ -1,4 +1,4 @@
-import { Component, h, Prop,Event,EventEmitter } from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 import { Cerveza } from '../app-form/app-form';
 
 @Component({
@@ -12,7 +12,7 @@ export class AppBeercards {
   @Prop() listaBeer: Cerveza[];
   @Prop() changeFormValue: Function;
 
-  @Event({bubbles:true,composed:true}) checker: EventEmitter<number>;
+  @Event({ bubbles: true, composed: true }) checker: EventEmitter<number>;
 
   onCheck(e: Event, i: Cerveza): void {
     i.estado = !i.estado
@@ -24,7 +24,7 @@ export class AppBeercards {
     }
     this.checker.emit(this.checkboxCounter);
     console.log(this.checkboxCounter);
-    //console.log(i);
+    //console.log(this.checker);
     console.log(e);
 
 

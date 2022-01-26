@@ -31,6 +31,25 @@ li {
   vertical-align: center;
 }
 
+.openModal {
+  text-align: center;
+  width:1vw;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-decoration: none;
+  margin-left: 1vw;
+  color: black;
+  border: solid 2px black;
+  border-radius: 100px;
+  padding: 0.1vh 0.1vw 0.1vh 0.1vw;
+  cursor: pointer;
+}
+
+.openModal:hover {
+  color: rgb(246, 247, 189);
+  border-color: rgb(246, 247, 189);
+}
+
 @media screen and (max-width: 1200px) and (min-width:576px) {
   .app-beerlist {
     width: 80vw;

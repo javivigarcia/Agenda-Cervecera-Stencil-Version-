@@ -1,4 +1,4 @@
-import { Component, h, State, Method, Listen } from '@stencil/core';
+import { Component, h, State, Method, Listen, Watch, Prop } from '@stencil/core';
 
 export type Cerveza = {
   id: number;
@@ -106,7 +106,7 @@ export class AppForm {
   private singleBeer!: Cerveza;
   public beerListDeContacto: Cerveza[] = [];
   private listaBeer: Cerveza[] = [];
-  public checksCounter: Number = 0;
+  @Prop() checksCounter: Number = 0;
 
   // Definimos lo que a continuacion sera nuestro FormControl y FormGroup de Angular y los distintos inputs.
   @State() formControls = {
@@ -159,7 +159,6 @@ export class AppForm {
   // definimos un estado para el control del estado del formulario
   @State() submitted = false;
 
-  @State() numBeers = false;
 
   componentDidLoad() {
     // Aquí seteamos cuales van a ser las funciones validadoras de los distintos inputs que tenemos
@@ -268,7 +267,7 @@ export class AppForm {
           state = false;
         }
         )
-      this.singleBeer = { id: id, nombre: nombre, descripcion: descripcion, estado: state, imagen: imagen }
+      this.singleBeer = { id: id, nombre: nombre, descripcion: descripcion, estado: state, imagen: imagen}
       this.listaBeer.push(this.singleBeer)
     }
     console.log(this.listaBeer)
@@ -281,7 +280,12 @@ export class AppForm {
     this.checksCounter = event.detail
     console.log('ChecksCounter:', this.checksCounter)
   }
-
+  public checksCounterWatcher: boolean;
+  @Watch('checksCounter') checksCounterHadler(newValue: Number, oldValue: Number) {
+    if (newValue < 1 || newValue > 3) {
+      this.checksCounterWatcher = false;
+    } else { this.checksCounterWatcher = true }
+  }
 
   //------------------------------------------------------Fin de Beercards stuff---------------------------------------------------------------
 
@@ -329,8 +333,10 @@ export class AppForm {
           </div>
 
           <div class="app-form__validatorAlert--wrapper">
-            {(this.checksCounter < 1 || this.checksCounter < 3) && <p class={'app-form__validatorAlert'}> Debes seleccionar entre 1 y 3 cervezas favoritas.  </p>}
+            {!this.checksCounterWatcher && <p class={'app-form__validatorAlert'}> Debes seleccionar entre 1 y 3 cervezas favoritas </p>}
           </div>
+
+
 
 
           <div class="app-form__btnWrapper">
